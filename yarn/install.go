@@ -42,7 +42,7 @@ func Install(ctx context.Context, c client.Client) (*client.Result, error) {
 }
 
 func NewState(ctx context.Context, c client.Client) (*llb.State, error) {
-	inputs := []string{"package.json", "package-lock.json", ".npmrc", ".yarnrc"}
+	inputs := []string{"package.json", "yarn.lock", ".npmrc", ".yarnrc"}
 	src := llb.Local("context",
 		llb.FollowPaths(inputs),
 	)
